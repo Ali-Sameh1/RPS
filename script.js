@@ -8,9 +8,9 @@ function getHumanChoice(){
     return (prompt('rock , paper , scissors : ').toLowerCase());
 }
 
-let humanScore = 0 ;
-let computerScore = 0 ;
 
+let humanScore = 0;
+let computerScore = 0;
 
 function playRound (humanChoice , computerChoice){
     if (humanChoice === computerChoice){
@@ -34,16 +34,44 @@ function playRound (humanChoice , computerChoice){
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-
-
-function playGame() {
-    playRound(humanSelection , computerSelection);
-    let humanScore = 0 ;
-    let computerScore = 0 ;
-
+function playGame (){
+    for (let i = 1; i <= 5; i++ ){
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection,computerSelection); 
+    }
+    
+    if (humanScore > computerScore){
+        console.log(`Human Score : ${humanScore} `);
+        console.log(`Computer Score : ${computerScore}`)
+        console.log('Human wins');
+    }
+    else if (humanScore < computerScore) {
+        console.log(`Human Score : ${humanScore} `);
+        console.log(`Computer Score : ${computerScore}`)
+        console.log('Computer wins');
+    }
+    else {
+        console.log(`Human Score : ${humanScore} `);
+        console.log(`Computer Score : ${computerScore}`)
+        console.log('Its a tie!');
+    }
 }
 
 playGame();
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
